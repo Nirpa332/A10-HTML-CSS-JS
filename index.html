@@ -3,142 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TIC_TAC_TOE</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    body{
-        background-color: rgb(39, 91, 39);
-        text-align: center;
-
-    }
-    .tic_tac_toe{
-        color: burlywood;
-        display: flex;
-        justify-content: center;
-        
-    }
-    h1{
-        color: white;
-        text-shadow: 0px 0px 10px cyan,
-                    0px 0px 20px cyan,
-                    0px 0px 40px cyan,
-                    0px 0px 80px cyan;
-        font-weight: bold;
-        font-family: cursive;
-        font-size: 7vh;
-        color: solid;
-        background: linear-gradient(red,lightblue);
-        
-    }
-
-    .container{
-        display: flex;
-        justify-content:center;
-        align-items: center;
-        height: 70vh;
-    }
-    .turn{
-        display: flex;
-        margin-top: 1px;
-        justify-content:flex-end;
-        margin-right: 18vh;
-        font-size: 3vh;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        padding-right:7px;
-        color: aliceblue;
-    }
-    .game{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding-top: 7px;
-
-
-        height: 60vh;
-        width: 60vh;
-    }
-    .box{
-        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-        border-radius: 9px;
-        height: 18vh;
-        width: 18vh;
-        color: rgb(113, 108, 52);
-        font-size: 7vh;
-        font-family: cursive;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        background-color: rgb(113, 113, 52);
-       }
-       .box:hover{
-        background-color: gray;
-        background-position: center;
-        background-size: cover;
-
-        .half-color{
-        color: transparent;
-        background: linear-gradient(red 50%,blue 50%);
-        -webkit-background-clip: text;
-        font-size: 9vh;
-       }
-       }
-       
-       .but{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       }
-       button{
-        margin-top: 3px;
-        height: 7vh;
-        width: 18vh;
-        background-color: grey;
-        color: darkblue;
-        font-weight: bold;
-        font-size: 2.5vh;
-        
-        
-       }
-       button:hover{
-        background-color: lightblue;
-       }
-       .frame{
-        margin-top: 7px;
-       }
-       pre{
-        color:transparent;
-        background: linear-gradient(yellow,red);
-        -webkit-background-clip: text;
-
-       }
-
-</style>
 <body>
+    <div class="msg-container hide">
+        <p class="msg">Winner</p>
+    <button class="new-game">New Game</button>
+    </div>
     <header>
         <div class="tic_tac_toe">
             <h1>TIC_TAC_TOE</h1>
         </div>
     </header>
-    <div class="turn">
-        <div class="player">
-            <pre>
-                player X score :
-                player 0 score :
-            </pre>
-        </div>
-    </div>
-
     <div class="container">
 
         <div class="game">
-        <div class="box"><p class="half-color">X</p></div>
-        <div class="box"><p class="half-color">0</p></div>
-        <div class="box"><p class="half-color">X</p></div>
-        <div class="box"><p class="half-color">0</p></div>
-        <div class="box"><p class="half-color">X</p></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
@@ -148,15 +33,10 @@
 
     </div><!--container-->
     <div class="but">
-        <button>Reset Game </button>
+        <button id="reset-btn">Reset Game </button>
     </div>
-    <div class="frame">
-        <iframe width="700" height="415" src="https://www.youtube.com/embed/KK6X-x3dM7Y?si=4YIKFFecpZ4EuZCL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-        </iframe>
-        
-    </div>
+  
     
-    
+    <script src="app.js"> </script>
 </body>
 </html>
