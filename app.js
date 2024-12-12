@@ -60,7 +60,7 @@ const disableBoxes = () => {
 
 // Function to show the winner message  and call garne showWinner lai
 const showWinner = (winner) => {  
-    msg.innerText = `Congratulations! Winner is: ${winner}`;
+    msg.innerText = `Congratulations!🎉🎉💥 \nWinner is: ${winner}`;
     msgContainer.classList.remove("hide");    // to unhide the msg-container which was hide in style.css
     disableBoxes();  // function call to disable further clicks
 };
@@ -74,7 +74,7 @@ const checkWinner = () => {
 
         if (pos1Val !== "" && pos1Val === pos2Val && pos2Val === pos3Val) {
             console.log("Winner is:", pos1Val);
-            showWinner(pos1Val);   // showWinner function banaune
+            showWinner(pos1Val);   // showinner function .
             
         }
     }
