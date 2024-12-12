@@ -1,23 +1,25 @@
-// let modeBtn = document.querySelector("#mode");
-// let curMode="green"; 
+let modeBtn = document.querySelector("#mode");
+let curMode="green"; 
 
-// modeBtn.addEventListener("click",()=>{
-//     if (curMode === "green"){
-//         curMode = "blue";
-//         document.querySelector("body").style.backgroundColor = "#2a60de";
-//     }else{
-//         curMode = "green"
-//         document.querySelector("body").style.backgroundColor= "#177818";
-//     }
-//     console.log(curMode);
-// });
+modeBtn.addEventListener("click",()=>{
+    if (curMode === "green"){
+        curMode = "blue";
+        document.querySelector("body").style.backgroundColor = "#2a60de";
+        modeBtn.innerText="Switch to Green"
+    }else{
+        curMode = "green"
+        document.querySelector("body").style.backgroundColor= "#177818";
+        modeBtn.innerText="Switch to blue"
+    }
+    console.log(curMode);
+});
 
 
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset-btn");
 let newGame = document.querySelector(".new-game");
 let msgContainer = document.querySelector(".msg-container");
-let msg = document.querySelector(".msg");
+let msg = document.querySelector("#msg");
 
 let turnO = true; // Player O's turn initially
 
@@ -32,6 +34,7 @@ const winPatterns = [
     [6, 7, 8],
 ];
 
+
 // Add click event listeners to all boxes
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
@@ -42,24 +45,24 @@ boxes.forEach((box) => {
             box.innerText = "X";
             turnO = true;
         }
-        box.style.pointerEvents = "none"; // Disable further clicks  feri click hudaina  
-        checkWinner();
+        box.style.pointerEvents = "none"; //  ekchoti click garisakesi disable further clicks  
+        checkWinner();  // function call
     });
 });
 
-// winner vaisakepaxi aru box ma click nagarne banauna ko lagi function banaune
-const disableBoxes =()=>{
-    for (let box of boxes){
-        box.disabled= true;
+//  Function for if once won the game then probhiden to click in remainaining box
+const disableBoxes = () => {   
+    for (let box of boxes) {
+        box.style.pointerEvents = "none"; // pointsEvents none .
     }
-}
+};
 
 
 // Function to show the winner message  and call garne showWinner lai
-const showWinner = (winner) => {
+const showWinner = (winner) => {  
     msg.innerText = `Congratulations! Winner is: ${winner}`;
-    msgContainer.classList.remove("hide");
-    disableBoxes();  // winner vaisakepaxi aru box ma click nagarne banauna ko lagi function call garne
+    msgContainer.classList.remove("hide");    // to unhide the msg-container which was hide in style.css
+    disableBoxes();  // function call to disable further clicks
 };
 
 // Function to check for a winner
